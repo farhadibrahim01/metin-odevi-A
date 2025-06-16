@@ -1,0 +1,15 @@
+# Core data tools
+pandas
+numpy
+tqdm
+
+# Machine learning
+scikit-learn
+
+# LDA topic modeling
+gensim
+pyLDAvis
+
+# BERT feature extraction
+transformers
+torch

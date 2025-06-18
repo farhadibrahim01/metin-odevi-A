@@ -13,7 +13,7 @@ tokenizer = BertTokenizer.from_pretrained(model_name)
 model = BertModel.from_pretrained(model_name)
 model.eval()
 
-# Use GPU if available
+# GPU kullanirim
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
 

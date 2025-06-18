@@ -38,7 +38,7 @@ lda_model = models.LdaModel(
     corpus=corpus,
     id2word=dictionary,
     num_topics=5,
-    random_state=42,
+    random_state=2025,
     passes=10
 )
 

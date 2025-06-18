@@ -20,7 +20,7 @@ y = df["label"]
 # Step 2: Define pipeline
 pipeline = Pipeline([
     ("tfidf", TfidfVectorizer(
-        max_features=2000,
+        max_features=500,
         ngram_range=(1, 3),  # Includes unigrams, bigrams, trigrams
         min_df=2,
         max_df=0.9,
@@ -42,7 +42,7 @@ print(f"Average CV Accuracy: {np.mean(cv_scores):.4f} ({np.mean(cv_scores) * 100
 # Step 4: Final train/test split evaluation
 X_train, X_test, y_train, y_test = train_test_split(
     X, y,
-    test_size=0.4,
+    test_size=0.2,
     stratify=y,
     random_state=2025
 )

@@ -26,7 +26,7 @@ for label, path in pdf_map.items():
     doc.close()
 
 df = pd.DataFrame(data)
-df = df.sample(frac=1, random_state=42).reset_index(drop=True)
+df = df.sample(frac=1, random_state=2025).reset_index(drop=True)
 
 # Step 3: Assign semantic class labels
 final_labels = []
@@ -36,13 +36,13 @@ for label in df["source"].unique():
     if label == "alcohol":
         vectorizer = TfidfVectorizer(
             stop_words="english",
-            max_features=1000,
+            max_features=500,
             ngram_range=(1, 2),
             min_df=2,
             max_df=0.9
         )
         X = vectorizer.fit_transform(subset["text"])
-        kmeans = KMeans(n_clusters=2, random_state=42)
+        kmeans = KMeans(n_clusters=2, random_state=2025)
         clusters = kmeans.fit_predict(X)
         subset["label"] = [f"alcohol_{i}" for i in clusters]
     else:

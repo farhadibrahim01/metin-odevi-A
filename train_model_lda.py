@@ -36,7 +36,7 @@ def get_dominant_topic(doc_bow):
 df["lda_topic"] = [get_dominant_topic(bow) for bow in corpus]
 
 # Print topic keywords
-for topic_id, topic_words in lda_model.print_topics(num_words=8):
+for topic_id, topic_words in lda_model.print_topics(num_words=12):
     print(f"Topic {topic_id}: {topic_words}")
 
 # Save to CSV
